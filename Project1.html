@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--Filtering Site-->
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"> 
+
+    <!--Next Font Added-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        #header{
+            text-align: center;
+            font-size: 80px;
+            color: rgb(255, 255, 255);
+            background-color: rgba(255, 240, 240, 0.178);
+            border: 1px solid white;
+            border-radius: 70px;
+            width: 45%;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Monoton;
+            font-stretch: ultra-expanded;
+            text-shadow: 7px 2px 3px black;
+        }
+        #srch{
+            width: auto;
+            height: 50px;
+            /*border: 1px solid rgb(192, 255, 220);*/
+            background-color: rgba(255, 240, 240, 0.089);
+            border-radius: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Lilita One', cursive;
+        }
+        #gender{
+            /*background-color: rgb(202, 255, 237);*/
+            float: left;
+            width: 33.33%;
+            height: 50px;
+            align-items: center;
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Lilita One', cursive;
+            padding-top: 0.25%;
+        }
+        option{
+            font-size: 30px;
+            font-family: 'Lilita One', cursive;
+            text-align: center;
+            border: 2px solid black;
+            color: black;
+            background-color: rgb(255, 0, 51);  
+        }
+        select:hover{
+            border: 2px solid rgb(236, 11, 56);
+            color: rgb(255, 2, 53);
+            background-color: rgb(12, 12, 12);
+        }
+        select{
+            font-size: 32px;
+            font-family: 'Lilita One', cursive;
+            text-align: center;
+            width: 50%;
+            border: 2px solid black;
+            color: black;
+            background-color: rgb(255, 27, 72);
+            border-radius: 10px;
+        }
+        label{
+            color: rgb(255, 0, 51);
+            font-size: 32px;
+            text-shadow: 4px 4px 3px black;
+        }
+        #hobbies{
+            width: 33.33%;
+            height: 50px;
+            margin-left: 33.33%;
+            font-family: 'Lilita One', cursive;
+            text-align: center;
+        }
+        #hobsrc{
+            width: 80%;
+            font-size: 30px;
+            font-family: 'Lilita One', cursive;
+            border-radius: 10px;
+            margin-top: 0.50%;
+            padding-left: 8%;
+            padding-top: 0.75%;
+            padding-bottom: 0.75%;
+            border: 2px solid black;
+            color: black;
+            background-color: rgb(240, 35, 76);
+            box-shadow: 4px -4px 25px black;
+        }
+        #hobsrc:hover{
+            border: 2px solid rgb(236, 11, 56);
+            color: rgb(250, 0, 50);
+            background-color: rgb(12, 12, 12);
+        }
+        #srchButton{
+            float: right;
+            width: 33.33%;
+            height: 50px;
+            margin-top: -47px;
+            font-family: 'Lilita One', cursive;
+            text-align: center;
+        }
+        #rsbutton{
+            font-family: 'Lilita One', cursive;
+            font-size: 30px;
+            padding-left: 30%;
+            padding-right: 30%;
+            padding-top: 0.35%;
+            padding-bottom: 0.95%;
+            border-radius: 10px;
+            background-color: rgb(240, 36, 77);
+            border: 2px solid rgb(0, 0, 0);
+            font-stretch: narrower;
+            box-shadow: -5px -5px 25px black;
+        }
+        #rsbutton:hover{
+            background-color: rgb(10, 10, 10);
+            color: rgb(255, 1, 52);
+            border: 2px solid rgb(207, 9, 49);
+        }
+        #result{
+            font-family: 'Lilita One', cursive;
+        }
+        .prof{
+            width: auto;
+            height: 140px;
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            background-color: rgba(240, 248, 255, 0.226);
+            color: rgb(255, 1, 81);
+            text-shadow: 2px 2px 4px black;
+            border-radius: 80px;
+        }
+        .dp{
+            margin-left: 3.0%;
+            margin-top: -1.2%;
+            border: 3px solid rgb(255, 0, 51);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+        }
+        #dp1{
+            background-image: url("https://img1.ak.crunchyroll.com/i/spire3/b65f48a5273f8634a7068d90e1ba0b441588641802_large.png");
+            border-radius: 100px;
+        }
+        #dp2{
+            background-image: url('https://i.pinimg.com/564x/c3/c2/05/c3c20561f69db03c456a68ab0b4fc33c.jpg');
+        }
+        #dp3{
+            background-image: url('https://qph.cf2.quoracdn.net/main-thumb-1993797908-200-svlhanjhqeijmeqldirhuhbtrofufjft.jpeg');
+        }
+        #dp4{
+            background-image: url('https://i.pinimg.com/736x/e6/e3/d5/e6e3d5b850205d5426011b1cd1430fd3.jpg');
+        }
+        #dp5{
+            background-image: url('https://i.pinimg.com/474x/4b/31/ab/4b31abc64e6c0d4e662c611c4ceb8a13.jpg');
+        }
+        #dp6{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfSIfvymlMgNbx0soXGCwwbtF7BHDdUyqPJL2rslhw4grtg6DNQdYEcYgkdjOYedyX41s&usqp=CAU');
+        }
+        #dp7{
+            background-image: url('https://i1.sndcdn.com/artworks-7UwzNgc1gKUbH1AS-2WZ1XA-t500x500.jpg');
+        }
+        #dp8{
+            background-image: url('http://static-1.ivoox.com/audios/9/1/8/4/6341620034819_LG.jpg');
+        }
+        #dp9{
+            background-image: url('https://i.pinimg.com/736x/76/91/11/769111e9c654bcbc832c6754a310660c.jpg');
+        }
+        #dp10{
+            background-image: url('https://i.pinimg.com/originals/8c/86/e5/8c86e559c177709cace5f0c3768b1409.jpg');
+        }
+        #dp11{
+            background-image: url('https://i.pinimg.com/736x/4d/84/7a/4d847a823a517c175b7bd2dd9b58523f.jpg');
+        }
+        .name{
+            width: 20%;
+            margin-left: 12%;
+            margin-top: -6.8%;
+        }
+        .gen{
+            width: 20%;
+            margin-left: 33%;
+            margin-top: -2.4%;
+        }
+        .hob{
+            width: 20%;
+            margin-left: 54%;
+            margin-top: -2.45%;
+        }
+        .but{
+            width: 20%;
+            margin-left: 75%;
+            margin-top: -2.48%;
+        }
+        .b{
+            height: 100px;
+            width: 100px;
+            margin-left: 70%;
+            margin-top: 3%;
+            border-radius: 10px;
+            font-size: 30px;
+            font-family: 'Lilita One', cursive;
+            background-color: rgb(254, 45, 87);
+            border: 2px solid black;
+        }
+        .b:hover{
+            border: 2px solid rgb(254, 45, 87);
+            color: rgb(254, 45, 87);
+            background-color: black;
+        }
+    </style>
+    <title>Filtering</title>
+</head>
+<body>
+    <div id="header">FILTERING</div>
+    <br>
+    <div id="srch">
+        <div id="gender">
+            <label for="gen">G e n d e r :</label>
+            <select name="gen" id="gndr">
+                <option value="Both">Both</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div id="hobbies">
+            <input type="text" id="hobsrc" value="H o b b i e s . . . ">
+        </div>
+        <div id="srchButton">
+            <button id="rsbutton" onclick="searchClick()">S e a r c h</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="result">
+        <div id="prof1" class="prof" style="display: none;">
+            <br>
+            <div id="dp1" class="dp"></div>
+            <div id="name1" class="name">Monkey D Luffy</div>
+            <div id="gen1" class="gen">Male</div>
+            <div id="hob1" class="hob">Captain</div>
+            <div id="but1" class="but"><button class="b" value="prof1" onclick="call('name1')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof2" class="prof" style="display: none;">
+            <br>
+            <div id="dp2" class="dp"><img src="" alt=""></div>
+            <div id="name2" class="name">Roronoa Zoro</div>
+            <div id="gen2" class="gen">Male</div>
+            <div id="hob2" class="hob">Swordsman</div>
+            <div id="but2" class="but"><button class="b" value="prof2" onclick="call('name2')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof3" class="prof" style="display: none;">
+            <br>
+            <div id="dp3" class="dp"><img src="" alt=""></div>
+            <div id="name3" class="name">Nami</div>
+            <div id="gen3" class="gen">Female</div>
+            <div id="hob3" class="hob">Navigator</div>
+            <div id="but3" class="but"><button class="b" value="prof3" onclick="call('name3')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof4" class="prof" style="display: none;">
+            <br>
+            <div id="dp4" class="dp"><img src="" alt=""></div>
+            <div id="name4" class="name">Ussop</div>
+            <div id="gen4" class="gen">Male</div>
+            <div id="hob4" class="hob">Sniper</div>
+            <div id="but4" class="but"><button class="b" value="prof4" onclick="call('name4')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof5" class="prof" style="display: none;">
+            <br>
+            <div id="dp5" class="dp"><img src="" alt=""></div>
+            <div id="name5" class="name">Vinsmoke Sanji</div>
+            <div id="gen5" class="gen">Male</div>
+            <div id="hob5" class="hob">Chef</div>
+            <div id="but5" class="but"><button class="b" value="prof5" onclick="call('name5')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof6" class="prof" style="display: none;">
+            <br>
+            <div id="dp6" class="dp"><img src="" alt=""></div>
+            <div id="name6" class="name">Chopper</div>
+            <div id="gen6" class="gen">Male</div>
+            <div id="hob6" class="hob">Doctor</div>
+            <div id="but6" class="but"><button class="b" value="prof6" onclick="call('name6')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof7" class="prof" style="display: none;">
+            <br>
+            <div id="dp7" class="dp"><img src="" alt=""></div>
+            <div id="name7" class="name">Nico Robin</div>
+            <div id="gen7" class="gen">Female</div>
+            <div id="hob7" class="hob">Archealogist</div>
+            <div id="but7" class="but"><button class="b" value="prof7" onclick="call('name7')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof8" class="prof" style="display: none;">
+            <br>
+            <div id="dp8" class="dp"><img src="" alt=""></div>
+            <div id="name8" class="name">Franky</div>
+            <div id="gen8" class="gen">Male</div>
+            <div id="hob8" class="hob">Shipwright</div>
+            <div id="but8" class="but"><button class="b" value="prof8" onclick="call('name8')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof9" class="prof" style="display: none;">
+            <br>
+            <div id="dp9" class="dp"><img src="" alt=""></div>
+            <div id="name9" class="name">Brook</div>
+            <div id="gen9" class="gen">Male</div>
+            <div id="hob9" class="hob">Musician</div>
+            <div id="but9" class="but"><button class="b" value="prof9" onclick="call('name9')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof10" class="prof" style="display: none;">
+            <br>
+            <div id="dp10" class="dp"><img src="" alt=""></div>
+            <div id="name10" class="name">Zinbe</div>
+            <div id="gen10" class="gen">Male</div>
+            <div id="hob10" class="hob">Helmsman</div>
+            <div id="but10" class="but"><button class="b" value="prof10" onclick="call('name10')">Add</button></div>
+        </div>
+        <br>
+        <div id="prof11" class="prof" style="display: none;">
+            <br>
+            <div id="dp11" class="dp"><img src="" alt=""></div>
+            <div id="name11" class="name">Garp</div>
+            <div id="gen11" class="gen">Male</div>
+            <div id="hob11" class="hob">Captain</div>
+            <div id="but11" class="but"><button class="b" value="prof11" onclick="call('name11')">Add</button></div>
+        </div>
+    </div>
+    <script>
+        function call(s){
+            var nn = (document.getElementById(s)).innerHTML;
+            alert(nn + ' is Selected in Your Team');
+        }
+        function searchClick(){
+            for(var j = 1; j < 12; j++){
+                var clr = 'prof' + j.toString();
+                var clrD = document.getElementById(clr);
+                clrD.setAttribute('style', 'display: none;');
+            }
+            //console.log('Click Event is Called');
+            var data = document.getElementById('hobsrc');
+            var Di = data.value;
+            var D = Di.toLowerCase();
+            var Gender = document.getElementById('gndr');
+            var G = Gender.value;
+            console.log(D);
+            //console.log(G);
+            //var idd = 'prof';
+            //var temp = document.getElementById(i);
+            //temp.setAttribute('style', 'visibility: visible;');
+            for(var i = 1; i < 12; i++){
+                var innerID = 'prof' + i.toString();
+                //console.log(innerID);
+                var chk1 = chk1Fun();
+                function chk1Fun(){
+                    var gid = 'gen' + i.toString();
+                    var t1 = document.getElementById(gid);
+                    var V = t1.innerHTML;
+                    if (G == 'Both'){
+                        return true;
+                    }
+                    else if (G == V){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                
+                var chk2 = chk2Fun();
+                function chk2Fun(){
+                    var hb = 'hob' + i.toString();
+                    var H = ((document.getElementById(hb)).innerHTML).toLowerCase();
+                    if(D == null){
+                        return true;
+                    }
+                    else if(D == 'h o b b i e s . . . '){
+                        return true;
+                    }
+                    else if( D == ''){
+                        return true;
+                    }
+                    else if(D == '    '){
+                        return true;
+                    }
+                    else if (D == H){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                //console.log(chk2);
+
+                //Final Check
+                if(chk1 && chk2){
+                    var fin = document.getElementById(innerID);
+                    fin.setAttribute('style', 'visibility: visible;');
+                    //console.log(innerID);
+                }
+            }
+          }
+    </script>
+</body>
+</html>
